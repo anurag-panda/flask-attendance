@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance System</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Smart Attendance Management System</h1>
+        </header>
+
+        <nav class="navbar">
+            <a href="/home" class="nav-link">Home</a>
+            <a href="/add_student" class="nav-link">Add Student</a>
+            <a href="/students" class="nav-link">View Students</a>
+            <a href="attendance.html" class="nav-link">Attendance</a>
+            <a href="/attendance_summary" class="nav-link">Attendance Summery</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h2>Add New Student</h2>
+                    <p>Register new students for facial recognition attendance</p>
+                    <a href="add_student.html" class="btn" style="text-decoration: none;">Add Student</a>
+                </div>
+            
+                <div class="dashboard-card">
+                    <h2>Mark Attendance</h2>
+                    <p>Use webcam to automatically mark student attendance</p>
+                    <a href="attendance.html" class="btn" style="text-decoration: none;">Start Recognition</a>
+                </div>
+            
+                <div class="dashboard-card">
+                    <h2>Student List</h2>
+                    <p>View and manage registered students</p>
+                    <a href="student.html" class="btn" style="text-decoration: none;">View Students</a>
+                </div>
+            
+                <div class="dashboard-card">
+                    <h2>Attendance Records</h2>
+                    <p>View detailed attendance reports and statistics</p>
+                    <a href="attendance_summary.html" class="btn" style="text-decoration: none;">View Reports</a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2023 Smart Attendance System. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="..//static/js/main.js"></script>
+</body>
+</html>

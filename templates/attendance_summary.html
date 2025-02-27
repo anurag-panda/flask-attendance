@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Attendance System{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Smart Attendance Management System</h1>
+        </header>
+
+        <nav class="navbar">
+            <a href="/home" class="nav-link">Home</a>
+            <a href="/add_student" class="nav-link">Add Student</a>
+            <a href="/students" class="nav-link">View Students</a>
+            <a href="attendance.html" class="nav-link">Attendance</a>
+            <a href="/attendance_summary" class="nav-link">Attendance Summery</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="attendance-summary">
+                <h2>Attendance Records</h2>
+                <table class="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in records %}
+                        <tr>
+                            <td>{{ record[0] }}</td>
+                            <td>{{ record[1] }}</td>
+                            <td>{{ record[2] }}</td>
+                            <td>{{ record[3] }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">No attendance records found</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2023 Smart Attendance System. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="..//static/js/main.js"></script>
+</body>
+</html>

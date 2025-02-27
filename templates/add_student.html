@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Attendance System{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Smart Attendance Management System</h1>
+        </header>
+
+        <nav class="navbar">
+            <a href="/home" class="nav-link">Home</a>
+            <a href="/add_student" class="nav-link">Add Student</a>
+            <a href="/students" class="nav-link">View Students</a>
+            <a href="attendance.html" class="nav-link">Attendance</a>
+            <a href="/attendance_summary" class="nav-link">Attendance Summery</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="form-container">
+                <h2>Add New Student</h2>
+                <form id="addStudentForm" action="/add_student" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Full Name:</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Student ID:</label>
+                        <input type="text" name="student_id" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Department:</label>
+                        <input type="text" name="department" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Year:</label>
+                        <select name="year" required>
+                            <option value="1">First Year</option>
+                            <option value="2">Second Year</option>
+                            <option value="3">Third Year</option>
+                            <option value="4">Fourth Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Upload Photo:</label>
+                        <input type="file" name="image" accept="image/*" required>
+                    </div>
+                    <button type="submit" class="btn" onclick="showAlert()">Add Student</button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2023 Smart Attendance System. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="..//static/js/main.js"></script>
+    <script>
+        function showAlert() {
+            alert("Student added successfully!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Attendance System{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Smart Attendance Management System</h1>
+        </header>
+
+        <nav class="navbar">
+            <a href="/home" class="nav-link">Home</a>
+            <a href="/add_student" class="nav-link">Add Student</a>
+            <a href="/students" class="nav-link">View Students</a>
+            <a href="/start" class="nav-link">Attendance</a>
+            <a href="/attendance_summary" class="nav-link">Attendance Summery</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="students-container">
+                <h2>Registered Students</h2>
+                <br>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search by name or ID...">
+                </div>
+                <br><br>
+                <table class="students-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Year</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for student in students %}
+                        <tr>
+                            <td>{{ student[0] }}</td>
+                            <td>{{ student[1] }}</td>
+                            <td>{{ student[2] }}</td>
+                            <td>{{ student[3] }}</td>
+                            <td>{{ student[4] }}</td>
+                            <td>
+                                <form action="/delete_student" method="POST">
+                                    <input type="hidden" name="student_id" value="{{ student[0] }}">
+                                    <button type="submit" class="btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2023 Smart Attendance System. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

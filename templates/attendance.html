@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance System</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Smart Attendance Management System</h1>
+        </header>
+
+        <nav class="navbar">
+            <a href="/home" class="nav-link">Home</a>
+            <a href="/add_student" class="nav-link">Add Student</a>
+            <a href="/students" class="nav-link">View Students</a>
+            <a href="/start" class="nav-link">Attendance</a>
+            <a href="/attendance_summary" class="nav-link">Attendance Summery</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="attendance-container">
+                <h2>Live Attendance Marking</h2>
+                <div class="webcam-box">
+                    <video id="webcam" width="640" height="480" autoplay muted style="background-color: black;"></video>
+                    <button type="submit" href="/mark_attendance" class="btn">Mark Attendance</button>
+                    <div class="status-indicator">
+                        <div id="result" class="status-message"></div>
+                    </div>
+                </div>
+            </div>            
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2023 Smart Attendance System. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="..//static/js/main.js"></script>
+    <script src="..//static/js/attendance.js"></script>
+</body>
+</html>
